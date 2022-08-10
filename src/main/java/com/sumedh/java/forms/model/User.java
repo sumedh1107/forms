@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "Registration")
-public class Registration {
+public class User {
 
 	@Id
 	@GeneratedValue

@@ -7,24 +7,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sumedh.java.forms.model.Registration;
-import com.sumedh.java.forms.serviceimpl.RegistraitonServiceImpl;
+import com.sumedh.java.forms.model.User;
+import com.sumedh.java.forms.serviceimpl.UserServiceImpl;
 
 @RestController
-@RequestMapping("/api/v1/register")
-public class RegistrationController {
+@RequestMapping("/api/v1/user")
+public class UserController {
 
 	@Autowired
-	RegistraitonServiceImpl registrationService;
+	UserServiceImpl registrationService;
 	
-	@GetMapping(value ="/hello")
-	public String hello() {
-		return "hello";
-	}
-	
+
 	@PostMapping("/createuser")
-	public Registration createUser(@RequestBody Registration registration) {
-		return registrationService.registerUser(registration);
+	public User createUser(@RequestBody User user) {
+		return registrationService.createUser(user);
 	}
  
 }
